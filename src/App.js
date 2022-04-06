@@ -1,18 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
+import Header from "./components/Header/Header";
 
 const App = () => {
   return (
-    <Router>
-      <div>
-        <Routes>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-        </Routes>
-      </div>
-    </Router>
+    <div className="app">
+      <Router>
+        <>
+          <Routes>
+            <Route path="/" element={<Header />} />
+          </Routes>
+        </>
+      </Router>
+    </div>
   );
 }
 

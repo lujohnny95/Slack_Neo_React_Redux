@@ -3,7 +3,7 @@ import { useReducer } from "react";
 
 export default configureStore({
     reducer: {
-        user: useReducer,
+        // user: useReducer,
         
     },
 });
