@@ -14,7 +14,7 @@ const Chat = () => {
     const [roomDetails] = useDocument(
         roomId && db.collection("rooms").doc(roomId)
     );
-    const [roomMessages] = useCollection(
+    const [roomMessages, loading] = useCollection(
         roomId && 
             db
                 .collection("rooms")
@@ -30,7 +30,7 @@ const Chat = () => {
         chatRef?.current?.scrollIntoView({
             behaviour: "smooth",
         });
-    },[roomId]);
+    },[roomId, loading]);
 
     return (
         <ChatContainer>
@@ -52,7 +52,6 @@ const Chat = () => {
                 <ChatMessages>
                     {roomMessages?.docs.map((doc) => {
                         const { message, timestamp, user, userImage } = doc.data();
-
                         return (
                             <Message 
                                 key={doc.id}
@@ -63,7 +62,6 @@ const Chat = () => {
                             />
                         );
                     })}
-
                     <ChatBottom ref={chatRef}/>
                 </ChatMessages>
 
