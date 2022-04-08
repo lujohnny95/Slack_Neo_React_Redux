@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
 import styled from "styled-components"
-import { enterRoom } from "../features/appSlice"
+import { enterRoom } from "../../features/appSlice"
 import { db } from "../../firebase"
 
-const SidebarOption = ({ Icon, title, addChannelOption }) => {
+const SidebarOption = ({ Icon, title, addChannelOption, id }) => {
     const dispatch = useDispatch();
 
 
@@ -27,7 +27,7 @@ const SidebarOption = ({ Icon, title, addChannelOption }) => {
 
     return (
         <SidebarOptionContainer
-            onClick={addChannelOption ? addChannel : selectChannel}
+            onClick={!addChannelOption ? addChannel : selectChannel}
         >
             {Icon && <Icon fontSize="small" style={{ padding: 10 }} /> }
             {Icon ? (

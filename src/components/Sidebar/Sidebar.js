@@ -2,6 +2,7 @@ import { Apps, BookmarkBorder, Create, Drafts, ExpandLess, FiberManualRecord, Fi
 import { SidebarContainer, SidebarHeader, SidebarInfo } from './Sidebar.styles';
 import { useCollection } from "react-firebase-hooks/firestore";
 import SidebarOption from './SidebarOption';
+
 import { db } from "../../firebase";
 
 const Sidebar = () => {
